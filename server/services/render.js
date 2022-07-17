@@ -16,7 +16,7 @@ exports.add_user = (req, res)=>{
 }
 
 exports.update_user = (req, res)=>{
-    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+    axios.get('https://nodejs-backend-server-app.herokuapp.com/api/users', { params : { id : req.query.id }})
         .then(function(userdata){
             res.render("update_user",{ user : userdata.data})
         })
