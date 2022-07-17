@@ -2,22 +2,20 @@ const mongoose = require('mongoose');
 
 var schema = new mongoose.Schema(
     {
-        name:{
+        name : {
             type: String,
             required: true
         },
-        email: {
+        email : {
             type: String,
             required: true,
             unique: true
         },
-        gender: {
-            type: String,
-            status: String
-        }
+        gender : String,
+        status : String
     }
 )
 
-const Userdb = mongoose.model('userdb', schema);
+const Userdb = mongoose.model('Worker', schema);
 
 module.exports = Userdb;

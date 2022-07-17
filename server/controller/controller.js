@@ -1,11 +1,11 @@
 var Userdb = require('../model/model');
 
 // create and save new user
-exports.create = (req, res) => {
+exports.create = (req, res)=>{
     
     //validate request
     if(!req.body){
-        req.status(400).send(
+        res.status(400).send(
             {
                 message: "Content can't be empty!"
             }
@@ -24,9 +24,10 @@ exports.create = (req, res) => {
     )
 
     // save user into database
-    user.save(save)
+    user.save(user)
         .then(data => {
-            res.send(data)
+            // res.send(data)
+            res.redirect("/add-user")
         })
         .catch(err => {
             res.status(500).send({
